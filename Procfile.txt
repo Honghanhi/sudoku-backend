@@ -1,1 +1,9 @@
-web: gunicorn app:app
+services:
+  - type: web
+    name: sudoku-backend
+    env: python
+    buildCommand: ""
+    startCommand: "python app.py"
+    envVars:
+      - key: FLASK_ENV
+        value: production
